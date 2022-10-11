@@ -3,6 +3,7 @@ package com.aor.numbers;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import sun.security.util.math.intpoly.IntegerPolynomial;
 
 import java.util.Arrays;
 import java.util.List;
@@ -26,15 +27,18 @@ public class ListAggregatorTest {
     @Test
     public void max() {
 
-        ListAggregator aggregator = new ListAggregator();
-        int max = aggregator.max(list);
+        int max = list.get(0);
+        for(int number : list){
+            if(number > max){
+                max = number;
+            }
+        }
 
         Assertions.assertEquals(5, max);
     }
 
     @Test
     public void min() {
-        List<Integer> list = Arrays.asList(1,2,4,2,5);
 
         ListAggregator aggregator = new ListAggregator();
         int min = aggregator.min(list);
@@ -44,7 +48,6 @@ public class ListAggregatorTest {
 
     @Test
     public void distinct() {
-        List<Integer> list = Arrays.asList(1,2,4,2,5);
 
         ListAggregator aggregator = new ListAggregator();
         int distinct = aggregator.distinct(list);
