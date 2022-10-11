@@ -24,4 +24,14 @@ public class ListSorterTest {
 
         Assertions.assertEquals(expected, sorted);
     }
+
+    @Test
+    public void bug_sort(){
+        list = Arrays.asList(3, 2, 6, 1, 4);
+        expected = Arrays.asList(1, 2, 3, 4, 6);
+        ListSorter sorter = new ListSorter();
+        List<Integer> sorted = sorter.sort(list);
+
+        Assertions.assertEquals(expected, sorted);
+    }
 }
