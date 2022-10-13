@@ -11,9 +11,10 @@ import java.util.List;
 
 public class ListAggregatorTest {
     List<Integer> list;
+
     @BeforeEach
     public void Helper() {
-        list = Arrays.asList(1,2,4,2,5);
+        list = Arrays.asList(1, 2, 4, 2, 5);
     }
 
     @Test
@@ -28,12 +29,8 @@ public class ListAggregatorTest {
     @Test
     public void max() {
 
-        int max = list.get(0);
-        for(int number : list){
-            if(number > max){
-                max = number;
-            }
-        }
+        ListAggregator aggregator = new ListAggregator();
+        int max = aggregator.max(list);
 
         Assertions.assertEquals(5, max);
     }
@@ -66,6 +63,7 @@ public class ListAggregatorTest {
         int distinct = aggregator.distinct(list, deduplicator);
         Assertions.assertEquals(4, distinct);
     }
+
     @Test
     public void max_bug_8726() {
         List<Integer> list = Arrays.asList(1,2,4,2);
@@ -76,3 +74,4 @@ public class ListAggregatorTest {
         Assertions.assertEquals(3, distinct);
     }
 }
+
