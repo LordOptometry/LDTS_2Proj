@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.aor.numbers.ListFilterTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-18T16:20:10" hostname="MacBook-Pro-de-Nuno-4.local" time="0.019">
+  <properties/>
+  <testcase name="filter()" classname="com.aor.numbers.ListFilterTest" time="0.019"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
